@@ -23,6 +23,18 @@ open class Person(
     fun sayHello(you: String): String = "hi $you, my name $firsname"
     // function overloading on object
     fun sayHello(you: String, firsname: String): String = "hi $you, my name ${this.firsname}"
+
+
+
+    override fun toString(): String {
+        return """
+            |------------------------------------
+            | fname   : $firsname
+            | lname   : $lastname
+            | address : $address
+            | 
+        """.trimMargin()
+    }
 }
 
 

@@ -14,37 +14,31 @@ ADA 3 PARADIGMA KONSEP PEMOGRAMAN:
 
 
 fun main(args: Array<String>) {
-    for (va in args) println(va)
-    val person = Person()
-    val job = Job()
-    val searchJob = SearchJob()
     val datas = Generator()
+//    for (va in args) println(va)
+//    val person = Person()
+//    val job = Job()
+//    val searchJob = SearchJob()
+//
+//    val newPerson = Person("eko", "kurniawan", "Bogor")
+//    println(newPerson)
+//
+//    val secConstructor = Person("budi", "rudiansyah")
+//    println(secConstructor)
+//
+//    println(person.sayHello("eko"))
+//    println(person.sayHello("eko", "aditt"))
+//    println(
+//        """
+//            |hi ${job.firsname},
+//            |are you good on ${job.profession}?
+//            """.trimMargin()
+//    )
+//    searchJob.searchNewJob("Android Developer")
 
-    val newPerson = Person("eko", "kurniawan", "Bogor")
-    println(newPerson)
 
-    val secConstructor = Person("budi", "rudiansyah")
-    println(secConstructor)
-
-    println(person.sayHello("eko"))
-    println(person.sayHello("eko", "aditt"))
-    println(
-        """
-            |hi ${job.firsname},
-            |are you good on ${job.profession}?
-            """.trimMargin()
-    )
-    searchJob.searchNewJob("Android Developer")
-
-
-    for (data in datas.genPerson(5)) {
-        println(
-            """
-            | ----------------------------------------
-            | firstname = ${data.firsname}
-            | lastname  = ${data.lastname}
-            | address   = ${data.address}
-        """.trimMargin()
-        )
+    for (data in datas.genPerson(2)) println(data)
+    for ((i, data) in datas.genLocation(2).distinct().withIndex()) {
+        println("${i + 1} -> ${data}")
     }
 }
